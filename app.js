@@ -44,4 +44,6 @@ function calculateTime() {
   month.innerHTML = monthName;
   hour.innerHTML = hourNumber;
   minute.innerHTML = minuteNumber;
+
+  setTimeout(calculateTime, 200);
 }
