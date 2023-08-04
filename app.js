@@ -5,10 +5,8 @@ function calculateTime() {
 
   const dayNumber = date.getDay();
   const monthNumber = date.getMonth();
-  const hourNumber = date.getHours();
-  const minuteNumber = date.getMinutes();
-
-  console.log(date);
+  let hourNumber = date.getHours();
+  let minuteNumber = date.getMinutes();
 
   const day = document.querySelector(".day");
   const month = document.querySelector(".month");
@@ -31,7 +29,7 @@ function calculateTime() {
     "December",
   ];
 
-  function getMonthName(month) {
+  function getMonthName() {
     let i = -1;
     while (i < monthNumber) {
       monthName = months[i + 1];
@@ -39,6 +37,17 @@ function calculateTime() {
     }
   }
   getMonthName();
+
+  function doubleNum() {
+    if ((hourNumber.length = 1)) {
+      hourNumber = `0${hourNumber}`;
+    }
+    if ((minuteNumber.length = 1)) {
+      minuteNumber = `0${minuteNumber}`;
+    }
+  }
+
+  doubleNum();
 
   day.innerHTML = dayNumber - 1;
   month.innerHTML = monthName;

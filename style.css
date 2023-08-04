@@ -126,14 +126,20 @@ body {
   border-radius: 10px;
   width: 100dvh;
   height: 20dvw;
-  transition: 5s;
+  transition: 400ms;
 }
 
 .clocks-elements:only-child {
   display: flex;
   font-size: calc(10dvh);
+  font-family: "Roboto", sans-serif;
+  transition: 400ms;
 }
 
 #element {
   margin: 5px;
+}
+.split {
+  padding-left: 10px;
+  padding-right: 10px;
 }
