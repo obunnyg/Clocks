@@ -1,6 +1,7 @@
 window.addEventListener("load", calculateTime);
 
 function calculateTime() {
+  window.addEventListener("load", doubleNum);
   const date = new Date();
 
   const dayNumber = date.getDay();
@@ -35,24 +36,33 @@ function calculateTime() {
       monthName = months[i + 1];
       i++;
     }
+    return;
   }
   getMonthName();
 
+  let hourNum;
+  let minuteNum;
+
   function doubleNum() {
-    if ((hourNumber.length = 1)) {
-      hourNumber = `0${hourNumber}`;
+    const strHour = String(hourNumber);
+    if (strHour.length === 1) {
+      hourNum = `0${hourNumber}`;
+    } else {
+      hourNum = date.getHours();
     }
-    if ((minuteNumber.length = 1)) {
-      minuteNumber = `0${minuteNumber}`;
+    const strMinute = String(minuteNumber);
+    if (strMinute.length === 1) {
+      minuteNum = `0${minuteNumber}`;
+    } else {
+      minuteNum = date.getMinutes();
     }
   }
-
   doubleNum();
 
   day.innerHTML = dayNumber - 1;
   month.innerHTML = monthName;
-  hour.innerHTML = hourNumber;
-  minute.innerHTML = minuteNumber;
+  hour.innerHTML = hourNum;
+  minute.innerHTML = minuteNum;
 
   setTimeout(calculateTime, 200);
 }
